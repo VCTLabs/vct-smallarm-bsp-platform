@@ -60,12 +60,16 @@ Other dev requirements
 Some requirements cannot be installed via tox or pip, and must be installed
 via OS package manager (eg, ``apt`` or ``emerge``). Some workflows here may
 depend on the ``setcap`` tool to provide specific Linux Capabilities (eg, to
-run a python tftp server on the default port number expected by u-boot).
+run a python tftp server on the default port number expected by u-boot). Note
+the default example configuration includes a serial console, so install your
+favorite terminal program, eg, picocom_ or putty_.
 
 Follow the `usual Yocto/OE guidance`_ to install build dependencies and add the
 appropriate ``libcap`` package to the list of dependencies, eg, ``libcap2-bin``
 or ``sys-libs/libcap``. The older `OE and your distro`_ page is also useful.
 
+.. _picocom: https://linux.die.net/man/8/picocom
+.. _putty: https://www.instructables.com/How-to-Connect-to-USB-Console-by-Using-PuTTY/
 .. _usual Yocto/OE guidance: https://docs.yoctoproject.org/ref-manual/system-requirements.html
 .. _OE and your distro: https://www.openembedded.org/wiki/OEandYourDistro
 
@@ -77,6 +81,7 @@ References and examples
 * http://meta-raspberrypi.readthedocs.io/en/latest/
 * https://www.beagleboard.org/projects/yocto-on-beaglebone-black
 * https://github.com/VCTLabs/vct-enclustra-bsp-platform
+* https://github.com/sarnold/u-boot-ATF-manifest
 
 
 Tox workflows
