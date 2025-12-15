@@ -7,7 +7,7 @@ virtual environment. The (shared) tox environment uses several environment
 variables to set/adjust various build and/or workflow options and installs
 some useful support tools.
 
-This first release uses OpenEmbedded metadata layers on ``mickledore``
+This release uses OpenEmbedded metadata layers on ``scarthgap``
 branches and a KAS_ build configuration.
 
 .. _KAS: https://kas.readthedocs.io/en/latest/command-line.html
@@ -15,7 +15,7 @@ branches and a KAS_ build configuration.
 Old quick start steps:
 
 * cd somewhere
-* clone this repo - default branch is now ``oe-mickledore``
+* clone this repo - default branch is now ``scarthgap``
 * cd repo/
 * create .venv with ``tox -e dev``
 * view/edit the KAS configuration file ``layers/meta-small-arm-extra/kas/oe/base.yaml``
@@ -246,8 +246,6 @@ workflow environment descriptions::
   dev     -> Create a kas build virtual environment with managed deps
   bmap    -> Burn the wic image to sdcard device (default: /dev/mmcblk0)
   sdcard  -> Build the (wic) sdcard boot target
-  sync    -> Install repolite and use it for cloning workflow deps
-  do      -> Run a cmd following "--" from the sync .env, e.g. "tox -e do -- repolite --show"
 
   additional environments:
   changes -> [no description]
@@ -260,7 +258,6 @@ workflow environment descriptions::
 
 Also note the primary tox commands given here are order-dependent, eg::
 
-  $ tox -e sync                   # first time setup only
   $ tox -e dev                    # checkout/refresh yocto layers and build config
   $ IPP="192.168.7.122:8080" tox -e sdcard  # USE YOUR BUILD HOST IP:PORT
   # <insert USB card reader or sdcard>
@@ -287,14 +284,14 @@ Run KAS directly without Tox
 
    $ python -m venv .venv
    $ source .venv/bin/activate
-   (.venv) $ python -m pip install kas bmaptool
+   (.venv) $ python -m pip install kas
 
 2. clone the "config" layer (where the new kas base.yaml lives):
 
 ::
 
    (.venv) $ mkdir layers
-   (.venv) $ git clone https://github.com/VCTLabs/meta-small-arm-extra.git -b mickledore layers/meta-small-arm-extra
+   (.venv) $ git clone https://github.com/VCTLabs/meta-small-arm-extra.git -b scarthgap layers/meta-small-arm-extra
 
 3. view/edit the kas file ``layers/meta-small-arm-extra/kas/oe/base.yaml`` and
    check/set the desired values for the package feed keys
