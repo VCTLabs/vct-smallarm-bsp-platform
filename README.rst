@@ -22,11 +22,12 @@ Old quick start steps:
 
 New tox workflows:
 
-Defaults are currently the rpi3-64 machine with both a console image on sysvinit
-and an xorg image on systemd as default build configs. User build knobs include:
+Defaults are currently the rpi3-64 machine with a console image and sysvinit
+or bbb machine with an xorg image and systemd as default build configs. User
+build knobs include:
 
-1. the desired machine key, eg: ``raspberrypi3-64``
-2. the desired image target key, eg ``rpi-test-image``
+1. the desired machine key, eg: ``KAS_MACHINE=raspberrypi3-64``
+2. the desired image target key, eg ``IMAGE=rpi-test-image``
 3. the package feed environment variables ``PACKAGE_FEED_IP_PORT`` and
    ``PACKAGE_FEED_TYPE``
 
@@ -370,7 +371,6 @@ are symlinks, but mainly there should be some obvious file types:
 * yocto build image files
 * kernel image, modules, and device tree files
 * u-boot image, boot script, and env files
-
 
 
 Host Requirements

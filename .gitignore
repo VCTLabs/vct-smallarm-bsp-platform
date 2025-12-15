@@ -5,8 +5,11 @@ __pycache__/
 
 # generated/user files and directories
 bitbake/
+sstate-cache/
 *openembedded*/
 meta-*/
+*keys/
+layers/
 ext/
 qspi/
 *.pdf
