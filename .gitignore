@@ -4,6 +4,7 @@ __pycache__/
 *$py.class
 
 # generated/user files and directories
+/*keys
 bitbake/
 *openembedded*/
 meta-*/
